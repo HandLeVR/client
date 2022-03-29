@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using TMPro;
+using translator;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
@@ -39,7 +41,17 @@ public class ProfileManagementController : Singleton<ProfileManagementController
         newPasswordInputField.text = string.Empty;
         repeatedPasswordInputField.text = string.Empty;
         securityAnswerInputField.text = string.Empty;
+        securityQuestionDropdown.options = new List<TMP_Dropdown.OptionData>
+        {
+            new(TranslationController.Instance.Translate("login-screen-question-0")),
+            new(TranslationController.Instance.Translate("login-screen-question-1")),
+            new(TranslationController.Instance.Translate("login-screen-question-2")),
+            new(TranslationController.Instance.Translate("login-screen-question-3")),
+            new(TranslationController.Instance.Translate("login-screen-question-4")),
+            new(TranslationController.Instance.Translate("login-screen-question-5"))
+        };
         securityQuestionDropdown.value = 0;
+        securityQuestionDropdown.RefreshShownValue();
     }
 
     public void ChangeName()

@@ -569,6 +569,7 @@ GameObject:
   - component: {fileID: 540357331}
   - component: {fileID: 540357333}
   - component: {fileID: 540357332}
+  - component: {fileID: 540357334}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -693,6 +694,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540357330}
   m_CullTransparentMesh: 0
+--- !u!114 &540357334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540357330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297a68d4574002443997513fa668c70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: login-screen-cancel
 --- !u!1 &627147653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4125,6 +4139,7 @@ GameObject:
   - component: {fileID: 2031589597}
   - component: {fileID: 2031589599}
   - component: {fileID: 2031589598}
+  - component: {fileID: 2031589600}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -4249,6 +4264,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031589596}
   m_CullTransparentMesh: 0
+--- !u!114 &2031589600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031589596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297a68d4574002443997513fa668c70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: login-screen-confirm
 --- !u!1 &2040695945
 GameObject:
   m_ObjectHideFlags: 0
@@ -6503,6 +6531,7 @@ GameObject:
   - component: {fileID: 6464272537237893271}
   - component: {fileID: 6464272537237893269}
   - component: {fileID: 6464272537237893270}
+  - component: {fileID: 6464272537237893272}
   m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
@@ -6627,6 +6656,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6464272537237893272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464272537237893264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297a68d4574002443997513fa668c70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: login-screen-repeat-password
 --- !u!222 &6464272537325686546
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6755,6 +6797,7 @@ GameObject:
   - component: {fileID: 6464272537325686636}
   - component: {fileID: 6464272537325686546}
   - component: {fileID: 6464272537325686547}
+  - component: {fileID: 6464272537325686638}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -6762,6 +6805,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6464272537325686638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464272537325686637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297a68d4574002443997513fa668c70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: login-screen-change-password
 --- !u!1 &6464272537354303184
 GameObject:
   m_ObjectHideFlags: 0
@@ -8027,6 +8083,7 @@ GameObject:
   - component: {fileID: 6464272538750199693}
   - component: {fileID: 6464272538750199731}
   - component: {fileID: 6464272538750199692}
+  - component: {fileID: 6464272538750199732}
   m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
@@ -8042,6 +8099,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6464272538750199694}
   m_CullTransparentMesh: 0
+--- !u!114 &6464272538750199732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464272538750199694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297a68d4574002443997513fa668c70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: login-screen-new-password
 --- !u!1 &7084698083149720978
 GameObject:
   m_ObjectHideFlags: 0

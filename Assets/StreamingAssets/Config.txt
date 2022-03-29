@@ -119,7 +119,7 @@ ssl.keystore.password=passwort
 
 ### Anderes
 # Wenn dieser Wert auf "false" gesetzt ist, startet die Anwendung im Vollbildmodus. Ist der Wert auf "true" gesetzt, startet die Anwendung im Fenstermodus.
-#system.windowed-mode=true
+#system.windowed-mode=false
 # Beeinflusst die maximale Dateigröße von Medien und Aufnahmen in MB. Kann maximal auf 2000 gesetzt werden.
 #system.max-file-size=1000
 # Beeinflusst die Sprache des Systems. Es ist möglich English (en_US) oder Deutsch (de_DE) auszuwählen. Bisher steht nur der Probiermodus und das Reflexionswerkzeug auf Englisch zur Verfügung.

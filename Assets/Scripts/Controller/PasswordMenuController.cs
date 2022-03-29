@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using translator;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -24,27 +27,21 @@ public class PasswordMenuController : MonoBehaviour
     private string _currentSecurityAnswer;
     private UnityAction _onCancel;
 
-    private readonly string AnswerQuestionInfoString =
-        "Beantworten Sie bitte folgende Sicherheitsfrage, um Ihr Passwort ändern zu können.";
-
-    private readonly string SelectQuestionInfoString =
-        "Wählen Sie bitte eine Sicherheitsfrage aus und beantworten Sie diese, damit Sie Ihr Passwort ändern können, falls Sie es vergessen haben.";
-
-    private readonly string EnterNicknameInfoString =
-        "Geben Sie bitte Ihren Nutzernamen ein, um Ihr Passwort zu ändern.";
-
-    private readonly string EnterPasswordInfoString =
-        "Geben Sie bitte das neue Passwort ein. Es muss mindestens 8 Zeichen lang sein.";
-
-    private readonly string EnterFirstPasswordInfoString =
-        "Sie haben sich das erste Mal angemeldet. Bitte ändern Sie Ihr Passwort. Das Passwort muss mindestens 8 Zeichen lang sein.";
-
-    private readonly string AnswerInputString = "Antwort eingeben";
-    private readonly string UsernameInputString = "Nutzernamen eingeben";
-
     private void Awake()
     {
         cancelButton.onClick.AddListener(Cancel);
+        
+        questionDropdown.options = new List<TMP_Dropdown.OptionData>
+        {
+            new(TranslationController.Instance.Translate("login-screen-question-0")),
+            new(TranslationController.Instance.Translate("login-screen-question-1")),
+            new(TranslationController.Instance.Translate("login-screen-question-2")),
+            new(TranslationController.Instance.Translate("login-screen-question-3")),
+            new(TranslationController.Instance.Translate("login-screen-question-4")),
+            new(TranslationController.Instance.Translate("login-screen-question-5"))
+        };
+        questionDropdown.value = 0;
+        questionDropdown.RefreshShownValue();
     }
 
     private void OnEnable()
@@ -60,7 +57,7 @@ public class PasswordMenuController : MonoBehaviour
     {
         gameObject.SetActive(true);
         _onCancel = onCancel;
-        ShowSetPasswordScreen(EnterFirstPasswordInfoString);
+        ShowSetPasswordScreen(TranslationController.Instance.Translate("login-screen-enter-first-passwort"));
     }
 
     /// <summary>
@@ -91,9 +88,9 @@ public class PasswordMenuController : MonoBehaviour
     {
         ResetAll();
         infoText.gameObject.SetActive(true);
-        infoText.text = EnterNicknameInfoString;
+        infoText.text = TranslationController.Instance.Translate("login-screen-enter-nickname");
         input.gameObject.SetActive(true);
-        input.placeholder.GetComponent<TextMeshProUGUI>().text = UsernameInputString;
+        input.placeholder.GetComponent<TextMeshProUGUI>().text = TranslationController.Instance.Translate("login-screen-enter-username");
         confirmButton.onClick.AddListener(GetSecurityQuestion);
     }
     
@@ -104,11 +101,11 @@ public class PasswordMenuController : MonoBehaviour
     {
         ResetAll();
         infoText.gameObject.SetActive(true);
-        infoText.text = AnswerQuestionInfoString;
+        infoText.text = TranslationController.Instance.Translate("login-screen-answer-question");
         questionText.gameObject.SetActive(true);
         questionText.text = securityQuestion;
         input.gameObject.SetActive(true);
-        input.placeholder.GetComponent<TextMeshProUGUI>().text = AnswerInputString;
+        input.placeholder.GetComponent<TextMeshProUGUI>().text = TranslationController.Instance.Translate("login-screen-enter-answer");
         confirmButton.onClick.AddListener(ValidateSecurityAnswer);
     }
     
@@ -119,10 +116,10 @@ public class PasswordMenuController : MonoBehaviour
     {
         ResetAll();
         infoText.gameObject.SetActive(true);
-        infoText.text = SelectQuestionInfoString;
+        infoText.text = TranslationController.Instance.Translate("login-screen-select-question");
         questionDropdown.gameObject.SetActive(true);
         input.gameObject.SetActive(true);
-        input.placeholder.GetComponent<TextMeshProUGUI>().text = AnswerInputString;
+        input.placeholder.GetComponent<TextMeshProUGUI>().text = TranslationController.Instance.Translate("login-screen-enter-answer");
         confirmButton.onClick.AddListener(UpdateUserPassword);
     }
 
@@ -257,7 +254,7 @@ public class PasswordMenuController : MonoBehaviour
                 {
                     // save for change password request because we use the security answer for authorization
                     _currentSecurityAnswer = input.text;
-                    ShowSetPasswordScreen(EnterPasswordInfoString);
+                    ShowSetPasswordScreen(TranslationController.Instance.Translate("login-screen-enter-password"));
                     PopupScreenHandler.Instance.Close();
                 }
                 else
