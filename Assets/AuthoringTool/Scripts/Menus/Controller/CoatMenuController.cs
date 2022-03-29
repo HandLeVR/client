@@ -355,6 +355,8 @@ public class CoatMenuController : BaseMenuController
         });
         runsStartThicknessWetInputField.onValueChanged.AddListener(_ =>
         {
+            Debug.Log(Le(1, runsStartThicknessWetInputField) && Le(runsStartThicknessWetInputField, 300) &&
+                      Le(maxThicknessWetInputField, runsStartThicknessWetInputField));
             ValidateInput(runsStartThicknessWetInputField,
                 Le(1, runsStartThicknessWetInputField) && Le(runsStartThicknessWetInputField, 300) &&
                 Le(maxThicknessWetInputField, runsStartThicknessWetInputField));
@@ -480,6 +482,7 @@ public class CoatMenuController : BaseMenuController
     {
         var inputFieldColors = inputField.colors;
         inputFieldColors.normalColor = validInput ? normalColor : warningColor;
+        inputFieldColors.disabledColor = validInput ? disabledColor : warningColor;
         inputField.colors = inputFieldColors;
         SetUnsavedChanges(true);
     }

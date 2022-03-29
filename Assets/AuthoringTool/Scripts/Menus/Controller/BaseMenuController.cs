@@ -17,6 +17,7 @@ public class BaseMenuController : MonoBehaviour
     
     protected readonly Color warningColor = new Color32(215, 11, 82, 64);
     protected readonly Color normalColor = Color.white;
+    protected readonly Color disabledColor = new Color(200 / 255f, 200 / 255f, 200 / 255f, 128 / 255f);
 
     /// <summary>
     /// Sets the unsaved change and makes the save button interactable accordingly.

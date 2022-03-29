@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -28,7 +29,12 @@ public class SupportInfosSettingsPanel : BaseSettingsPanel
     public void Awake()
     {
         monitorInput.onEndEdit.AddListener(delegate { SaveSettings(); });
-        minNumberInput.onEndEdit.AddListener(delegate { SaveSettings(); });
+        minNumberInput.onEndEdit.AddListener(value =>
+        {
+            if (!string.IsNullOrEmpty(value) && int.Parse(value) >= supportInfoDropArea.transform.childCount)
+                minNumberInput.text = Convert.ToString(supportInfoDropArea.transform.childCount - 1);
+            SaveSettings();
+        }); 
         sequenceToggle.onValueChanged.AddListener(delegate { SaveSettings(); });
         InitSkippableDropdown(skippableDropdown, addAllSkippableEntry:false);
         InitAudioInput(reminderAudioInput);
