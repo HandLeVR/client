@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using TMPro;
-using translator;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
@@ -68,31 +66,13 @@ public abstract class BaseElementListSettingsPanel : BaseSettingsPanel
         json.Add("items", sortablesJson);
         subTask.properties = json.ToString();
     }
-
-    protected virtual void InitElement(bool isMax, bool isLast, bool isSingle, JObject element = null )
-    {
-        BaseListElement newContainer = Instantiate(ElementPrefab, ElementListContainer.transform).GetComponent<BaseListElement>();
-        SetElementDropdown(newContainer.dropdown);
-        newContainer.btnAdd.onClick.AddListener(AddSelectionElement);
-        newContainer.btnRemove.onClick.AddListener(() => RemoveSelectionElement(newContainer.gameObject));
-        newContainer.btnRemove.onClick.AddListener(SaveSettings);
-        newContainer.btnAdd.gameObject.SetActive(!isMax && isLast);
-        newContainer.btnRemove.gameObject.SetActive(!isSingle);
-        newContainer.label.text = string.Format(labelTemplate, newContainer.transform.GetSiblingIndex() + 1);
-        newContainer.dropdown.onValueChanged.AddListener(delegate { SaveSettings(); });
-        
-        if (element == null)
-            newContainer.SetUpForSettings();
-        else
-            newContainer.SetUpForSettings(element);
-        
-
-        AdditionalInitElement(newContainer);
-    }
-
+    
     protected virtual void AdditionalInitElement(BaseListElement newContainer)
     {
     }
+
+    protected abstract void InitElement(bool isMax, bool isLast, bool isSingle, JObject element = null);
+    
 
     private void UpdateAllSelectionElements()
     {
@@ -122,12 +102,5 @@ public abstract class BaseElementListSettingsPanel : BaseSettingsPanel
     {
         DestroyImmediate(element);
         UpdateAllSelectionElements();
-    }
-
-    private void SetElementDropdown(TMP_Dropdown dropdown)
-    {
-        foreach (Sprite sprite in Resources.LoadAll<Sprite>("Images/SortableObjects").Where(i => i.name != "missingPicture"))
-            dropdown.options.Add(new TMP_Dropdown.OptionData(TranslationController.Instance.Translate(sprite.name)));
-        dropdown.value = 0;
     }
 }

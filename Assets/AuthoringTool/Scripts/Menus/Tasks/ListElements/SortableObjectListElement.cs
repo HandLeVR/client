@@ -14,6 +14,8 @@ public class SortableObjectListElement : BaseListElement
     public TMP_InputField labelingInputField;
     public Toggle insideToggle;
 
+    private string currentObject;
+
     void Start()
     {
         dropdown.onValueChanged.AddListener(delegate { SetImage(); });
@@ -46,7 +48,7 @@ public class SortableObjectListElement : BaseListElement
     {
         JObject json = new JObject
             {
-                { "model", TranslationController.Instance.GetKey(dropdown.captionText.text) },
+                { "model", DataController.Instance.sortableObjects[dropdown.value]},
                 { "text",  labelingInputField.text},
                 { "correct", insideToggle.isOn}
             };
@@ -55,11 +57,12 @@ public class SortableObjectListElement : BaseListElement
 
     private void SetImage()
     {
-       SetImage(TranslationController.Instance.GetKey(dropdown.captionText.text));
+       SetImage(DataController.Instance.sortableObjects[dropdown.value]);
     }
 
     private void SetImage(string objectName)
     {
+        currentObject = objectName;
         previewPic.sprite = Resources.Load<Sprite>("Images/SortableObjects/" + objectName);
         previewPic.color = Color.white;
         if (previewPic.sprite == null) // no object selected or preview pic doesn't exists

@@ -32,6 +32,9 @@ public class DataController : PersistentSingleton<DataController>
     // maintains the current local recordings
     public readonly List<Recording> localRecordings = new List<Recording>();
 
+    // the available objects for the sorting task
+    public readonly List<string> sortableObjects = new List<string>();
+
     // default coat which is defined in the fallback data
     // used when creating a new coat
     [HideInInspector] public Coat defaultCoat;
@@ -77,6 +80,12 @@ public class DataController : PersistentSingleton<DataController>
         // the first coat of the fallback data is the default coat and should not be usable
         defaultCoat = coats[0];
         coats.Remove(0);
+
+        // collect all objects for the sorting task
+        sortableObjects.Add("NoSortingObject");
+        foreach (var sprite in Resources.LoadAll<Sprite>("Images/SortableObjects")
+                     .Where(i => i.name != "missingPicture"))
+            sortableObjects.Add(sprite.name);
     }
 
     /// <summary>

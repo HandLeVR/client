@@ -135,21 +135,6 @@ namespace translator
             return Translate(key);
             
         }
-
-        /// <summary>
-        /// Returns the key to a translation.
-        /// </summary>
-        public string GetKey(string translation, string language = "de_DE")
-        {
-            Init();
-            foreach (var part in translations)
-            {
-                string toCompare = "de_DE" == language ? part.de_DE : part.en_US;
-                if (translation == toCompare)
-                    return part.id;
-            }
-            return translation;
-        }
     }
 }
 

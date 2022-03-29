@@ -15,9 +15,10 @@ vertical;vertikal;vertikal;
 NewPartPainting;Neuteillackierung;New Part Painting;
 RefinishingJob;Reparaturlackierung;Refinishing Job;
 SpotRepair;Spot-Repair;Spot Repair;
+NoSortingObject;Kein Gegenstand ausgewählt;No Object Selected
 CanRectangular;Eckiger Kanister;Angular Canister;
 CanRound;Runder Kanister;Rounded Canister;
-CoatCanWithAttachement;Runder Kanister mit Zusatz;Rounded Canister mit Zusatz;
+CoatCanWithAttachement;Runder Kanister mit Zusatz;Rounded Canister With Attachement;
 TargetContainerWithLid;Farbbehälter;Color Tank;
 Teacher;Ausbilder/in;Teacher;
 RestrictedTeacher;Eingeschränkte/r Ausbilder/in;Restricted Teacher;
