@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 5cec1224b4678a04397e48013900daea
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 4640887500954703177
+    second: "Kotfl\xFCgel rechts2|Kotfl\xFCgel rechts2|Kotfl\xFCgel rechts2|Kotfl\xFCgel
+      rechts2|Take 0"
+  - first:
+      74: -2139634359287034399
+    second: "Kotfl\xFCgel rechts2|Kotfl\xFCgel rechts2|Take 001|BaseLayer"
+  - first:
+      74: -4956369574773492332
+    second: "Kotfl\xFCgel rechts2|Schweller rechts2|Schweller rechts2|Dach2|Take
+      001|BaseLayer|Sc"
+  - first:
+      74: 4460208243683229676
+    second: "Kotfl\xFCgel rechts2|Schweller rechts2|Schweller rechts2|Schweller rechts2|Take
+      001|"
+  - first:
+      74: 8704843234089036765
+    second: "Kotfl\xFCgel rechts2|Schweller rechts2|Schweller rechts2|Sto\xDFstange
+      hinten2|Take 00"
+  - first:
+      74: -1312797187339860576
+    second: "Kotfl\xFCgel rechts2|Schweller rechts2|Schweller rechts2|Sto\xDFstange
+      vorn2.001|T"
+  - first:
+      74: -5955394848765052627
+    second: "Kotfl\xFCgel rechts2|Schweller rechts2|Schweller rechts2|Sto\xDFstange
+      vorn2.001|Take "
+  - first:
+      74: 6005235484318204003
+    second: "Kotfl\xFCgel rechts2|Schweller rechts2|Schweller rechts2|Sto\xDFstange
+      vorn2|Take "
+  - first:
+      74: -9167558049970934210
+    second: "Kotfl\xFCgel rechts2|Schweller rechts2|Schweller rechts2|Sto\xDFstange
+      vorn2|Take 001|"
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

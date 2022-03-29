@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!30 &1
+GraphicsSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 14
+  m_Deferred:
+    m_Mode: 0
+    m_Shader: {fileID: 0}
+  m_DeferredReflections:
+    m_Mode: 0
+    m_Shader: {fileID: 0}
+  m_ScreenSpaceShadows:
+    m_Mode: 0
+    m_Shader: {fileID: 0}
+  m_LegacyDeferred:
+    m_Mode: 0
+    m_Shader: {fileID: 0}
+  m_DepthNormals:
+    m_Mode: 0
+    m_Shader: {fileID: 0}
+  m_MotionVectors:
+    m_Mode: 0
+    m_Shader: {fileID: 0}
+  m_LightHalo:
+    m_Mode: 0
+    m_Shader: {fileID: 0}
+  m_LensFlare:
+    m_Mode: 0
+    m_Shader: {fileID: 0}
+  m_VideoShadersIncludeMode: 2
+  m_AlwaysIncludedShaders:
+  - {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 15104, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 15105, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 15106, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10782, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 16000, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 17000, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 4800000, guid: 5c876dd42267acc44a430c6851ab3a3f, type: 3}
+  - {fileID: 4800000, guid: 9312ecb66fde997469540d2c5cd72c6a, type: 3}
+  - {fileID: 4800000, guid: 5480ae59228a2f04795543ec92c0fc8d, type: 3}
+  - {fileID: 4800000, guid: c5e3394b05aba324abf45dd8db3fa03a, type: 3}
+  - {fileID: 4800000, guid: 2fb7b740a27f46e4db2bd7fd083183f5, type: 3}
+  - {fileID: 4800000, guid: 435f1c9904c8189429f7a13b34d686bb, type: 3}
+  - {fileID: 4800000, guid: fa0f3baf865681245a27e5bc786da31a, type: 3}
+  - {fileID: 16001, guid: 0000000000000000f000000000000000, type: 0}
+  m_PreloadedShaders: []
+  m_PreloadShadersBatchTimeLimit: -1
+  m_SpritesDefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000,
+    type: 0}
+  m_CustomRenderPipeline: {fileID: 11400000, guid: a2f1ff1c03a47554296c43b9e3f4d435,
+    type: 2}
+  m_TransparencySortMode: 0
+  m_TransparencySortAxis: {x: 0, y: 0, z: 1}
+  m_DefaultRenderingPath: 1
+  m_DefaultMobileRenderingPath: 1
+  m_TierSettings:
+  - serializedVersion: 5
+    m_BuildTarget: 1
+    m_Tier: 0
+    m_Settings:
+      standardShaderQuality: 2
+      renderingPath: 1
+      hdrMode: 1
+      realtimeGICPUUsage: 25
+      useReflectionProbeBoxProjection: 1
+      useReflectionProbeBlending: 1
+      useHDR: 1
+      useDetailNormalMap: 1
+      useCascadedShadowMaps: 1
+      prefer32BitShadowMaps: 0
+      enableLPPV: 0
+      useDitherMaskForAlphaBlendedShadows: 1
+    m_Automatic: 0
+  - serializedVersion: 5
+    m_BuildTarget: 1
+    m_Tier: 1
+    m_Settings:
+      standardShaderQuality: 2
+      renderingPath: 1
+      hdrMode: 1
+      realtimeGICPUUsage: 25
+      useReflectionProbeBoxProjection: 1
+      useReflectionProbeBlending: 1
+      useHDR: 1
+      useDetailNormalMap: 1
+      useCascadedShadowMaps: 1
+      prefer32BitShadowMaps: 0
+      enableLPPV: 0
+      useDitherMaskForAlphaBlendedShadows: 1
+    m_Automatic: 0
+  - serializedVersion: 5
+    m_BuildTarget: 1
+    m_Tier: 2
+    m_Settings:
+      standardShaderQuality: 2
+      renderingPath: 1
+      hdrMode: 1
+      realtimeGICPUUsage: 50
+      useReflectionProbeBoxProjection: 1
+      useReflectionProbeBlending: 1
+      useHDR: 1
+      useDetailNormalMap: 1
+      useCascadedShadowMaps: 1
+      prefer32BitShadowMaps: 1
+      enableLPPV: 1
+      useDitherMaskForAlphaBlendedShadows: 1
+    m_Automatic: 0
+  m_LightmapStripping: 0
+  m_FogStripping: 0
+  m_InstancingStripping: 0
+  m_LightmapKeepPlain: 1
+  m_LightmapKeepDirCombined: 1
+  m_LightmapKeepDynamicPlain: 1
+  m_LightmapKeepDynamicDirCombined: 1
+  m_LightmapKeepShadowMask: 1
+  m_LightmapKeepSubtractive: 1
+  m_FogKeepLinear: 1
+  m_FogKeepExp: 1
+  m_FogKeepExp2: 1
+  m_AlbedoSwatchInfos: []
+  m_LightsUseLinearIntensity: 1
+  m_LightsUseColorTemperature: 1
+  m_DefaultRenderingLayerMask: 1
+  m_LogWhenShaderIsCompiled: 0
+  m_SRPDefaultSettings:
+    UnityEngine.Rendering.Universal.UniversalRenderPipeline: {fileID: 11400000, guid: 9496d54d5a633e245808d2d8b3d44861,
+      type: 2}

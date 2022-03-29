@@ -1,0 +1,138 @@
+**For an english version see below.**
+
+# Neue Werkstücke hinzufügen
+
+Im Folgenden wird erklärt, wie ein neues Werkstück in die Anwendung integriert werden kann. Hierfür wird beispielhaft Blender 2.83 verwendet Es kann aber auch eine beliebige andere Anwendung für die Erstellung von 3D-Modellen genutzt werden.
+
+1. Zuerst muss das Objekt erstellt und die Objekte *Camera* und *Light* aus der Szene entfernen. Im Beispiel wird eine zusammengedrückte Kugel verwendet.
+![](Images/new_workpiece_1.PNG)
+ 
+2.	Da der Farbauftrag in der Anwendung auf Basis der UV-Map berechnet wird, muss diese entsprechend vorbereitet werden. Farbe kann z.B. nur auf Flächen herunterlaufen, die in der UV-Map zusammenhängend sind. Lücken können also nicht übersprungen werden. Die UV-Map sollte somit aus möglichst wenigen zusammenhängenden Flächen bestehen. Beim Beispielobjekt bietet es sich an die UV-Map in zwei Flächen aufzuteilen. Schnittkanten können in Blender entsprechend markiert werden. Hierfür müssen über *Edit Mode > Edge select* die entsprechenden Kanten ausgewählt und über einen Rechtsklick und *Mark Seam* entsprechend markiert werden. Die Kanten werden dann rot hervorgehoben.
+![](Images/new_workpiece_2.PNG)
+ 
+3.	Nun muss die UV-Map erstellt werden. Mit der Taste *A* können alle Kanten ausgewählt werden. Die UV-Map kann dann durch einen Klick auf *UV > Unwrap* erzeugt werden. Im UV-Editor sollten nun zwei zusammenhängende Flächen zu sehen sein.
+![](Images/new_workpiece_3.PNG)
+ 
+4.	Das Objekt kann nun als FBX exportiert (*File > Export > FBX*) und zum Unity-Projekt hinzugefügt werden.
+
+5.	Nun muss in Unity ein Prefab erstellt werden, damit das Werkstück dynamisch erzeugt werden kann. Hierfür kann die Szene *PaintShop* (*Assets/PaintShop/Scenes/PaintShop*) geöffnet werden.
+
+6.	Am besten wird ein bestehendes Prefab aus dem Ordner *Assets\PaintShop\Resources\CarComponents* in die Szene gezogen und komplett entpackt (*Rechtsklick auf das Objekt > Prefab > Unpack Completely*).
+![](Images/new_workpiece_4.PNG)
+ 
+7.	Das Objekt *Workpiece* sollte vorerst deaktiviert werden und das neue Werkstück entsprechend platziert werden. Das neue Objekt muss die Layer *Workpiece* erhalten.
+![](Images/new_workpiece_5.PNG)
+ 
+8.	Die Stangen des Lackierständers sollten auch angepasst werden, damit das Objekt entsprechend realistisch aufgehängt ist.
+![](Images/new_workpiece_6.PNG)
+ 
+9.	Das Material des neuen Werkstücks muss durch *Custom_DrawableLit* ersetzt werden (*Assets\PaintShop\Shader\Materials*).
+
+10.	Das Script *CustomDrawable* muss zum Werkstück hinzugefügt werden. Hierfür wird das Script am besten vom deaktivierten Werkstück kopiert, damit alle Referenzen übernommen werden. Außerdem muss das Script *MeshCollider* hinzugefügt werden.
+![](Images/new_workpiece_7.PNG)
+
+11. Das neue Werkstück muss ein Kind mit Namen *Hitbox* bekommen, auf dem das Script *BoxCollider* hinzugefügt wird. Der Parameter *Size* muss so angepasst werden, dass die Box das Werkstück mit etwas Puffer umschließt. Nur innerhalb dieser Box kann später lackiert werden. Das Objekt *Hitbox* muss die Layer *Hitbox* erhalten. Das Objekt *HitBox* muss außerdem im Script *CustomDrawable* des Werkstückes bei *Spray Box* zugewiesen werden.
+![](Images/new_workpiece_8.PNG)
+
+12. Das alte *Workpiece*-Objekt kann nun gelöscht werden.
+
+13. Der Vater des Objekts (im Bild *door*) sollte umbenannt werden (im Beispiel nun *sphere*).
+
+14. Aus dem Objekt wird ein Prefab erstellt, indem es in den Ordner *Assets\PaintShop\Resources\CarComponents* gezogen wird.
+![](Images/new_workpiece_9.PNG)
+
+15. Nun muss noch ein Vorschaubild erstellt werden, das auf dem Monitor bei der Auswahl eines Werkstücks angezeigt wird. Hierfür wird die Szene *Assets\PaintShop\Scenes\ThumbnailGeneration* geöffnet.
+
+16. In der Komponente *MeshFilter* des Objekts *Cube* muss das Mesh des neuen Objekts ausgewählt werden.
+![](Images/new_workpiece_10.PNG)
+
+17. Die Kamera *Main Camera* sollte so platziert werden, dass das Werkstück in der Vorschau möglichst mittig platziert ist.
+![](Images/new_workpiece_11.PNG)
+
+18. Die Szene wird nun einmal über den *Play*-Button gestartet und wieder beendet. Nun erscheint das Vorschaubild im *Assets*-Ordner unter den Namen *Cube_preview*.
+
+19. Das Objekt muss entsprechend des zuvor erstellten Prefabs umbenannt werden (hier *sphere_preview*) und in den Ordner der Prefabs verschoben werden (*Assets\PaintShop\Resources\CarComponents*). Außerdem muss der *Texture Type* in den Einstellungen des Bildes auf *Sprite (2D and UI)* geändert werden.
+![](Images/new_workpiece_12.PNG)
+
+20. Damit das Werkstück im Probiermodus ohne Anmeldung (und somit ohne Verbindung zum Server) angezeigt wird, muss in der Datei *Assets\StreamingAssets\FallbackData.json* die Liste *workpieces* um ein Objekt erweitert werden. Dabei ist *ID* der fortlaufende Index, *DISPLAY_NAME* der Name unter dem das Werkstück auf dem Monitor angezeigt wird und *PREFAB_NAME* der Name des Prefabs, das das Werkstück enthält.
+
+```
+{
+  "id": ID,
+  "name": "DISPLAY_NAME",
+  "data": "CarComponents/PREFAB_NAME"
+}
+```
+
+
+
+21. Damit das Werkstück über das Autorenwerkzeug auch in eine Lernaufgabe eingebunden werden kann, muss ein Eintrag in der Datenbank hinzugefügt werden. Ein Beispiel hierfür ist im [Initialisierungsscript](https://github.com/HandLeVR/server/blob/master/src/main/resources/db/migration/h2/V1.0__Init.sql) für die Datenbank des Servers zu finden.
+
+
+---
+
+# Adding new workpieces
+
+In the following we explain how a new workpiece can be integrated into the application. For this purpose Blender 2.83 is used as an example. However, any other application able to create 3D models can be used.
+
+1. First the object has to be created and the objects *Camera* and *Light* have to be removed from the scene. In the example, a compressed sphere is used. 
+![](Images/new_workpiece_1.PNG)
+
+2. Since the application of paint in the application is calculated based on the UV map, it must be prepared accordingly. For example, paint can only run down on surfaces that are contiguous in the UV map. Therefore, paint cannot jump over gaps. The UV map should therefore consist of as few contiguous surfaces as possible. In the case of the example object, it makes sense to divide the UV map into two surfaces. Cutting edges can be marked accordingly in Blender. To do this, select the corresponding edges via *Edit Mode > Edge select* and mark them accordingly by right-clicking and selecting *Mark Seam*. The edges are then highlighted in red. 
+![](Images/new_workpiece_2.PNG)
+
+3. Now the UV map must be created. With the *A* key all edges can be selected. The UV map can then be created by clicking on *UV > Unwrap*. Two contiguous surfaces should now be visible in the UV Editor. 
+![](Images/new_workpiece_3.PNG)
+
+4. The object can now be exported as FBX (*File > Export > FBX*) and added to the Unity project.
+
+5. Now a prefab has to be created in Unity so that the workpiece can be created dynamically. For this purpose, the *PaintShop* scene (*Assets/PaintShop/Scenes/PaintShop*) can be used.
+
+6. The best way to do this is to drag an existing prefab from the *Assets\PaintShop\Resources\CarComponents* folder into the scene and unpack it completely (*right click on the object > Prefab > Unpack Completely*). 
+![](Images/new_workpiece_4.PNG)
+
+7. The workpiece object should be deactivated for now and the new workpiece placed accordingly. The new object must be given the *Workpiece* layer. 
+![](Images/new_workpiece_5.PNG)
+
+8. The bars of the paint stand should also be adjusted accordingly so that the object is realistically suspended. 
+![](Images/new_workpiece_6.PNG)
+
+10. The material of the new workpiece must be replaced with Custom_DrawableLit (*Assets\PaintShop\Shader\Materials*).
+![](Images/new_workpiece_7.PNG)
+
+11. The *CustomDrawable* script must be added to the workpiece. For this, it is best to copy the script from the deactivated workpiece so that all references are transferred. The *MeshCollider* script must also be added. 
+![](Images/new_workpiece_8.PNG)
+
+12. The new workpiece must have a child named *Hitbox*, on which the script *BoxCollider* is added. The *Size* parameter must be adjusted so that the box encloses the workpiece with some buffer. Later, painting is on possible  inside this box. The object *Hitbox* must receive the layer *Hitbox*. The object *HitBox* must also be assigned in the script *CustomDrawable* of the workpiece as the *Spray Box*. 
+
+13. The old workpiece object can now be deleted.
+
+14. The parent of the object (*door* in the image) should be renamed (now *sphere* in the example).
+![](Images/new_workpiece_9.PNG)
+
+15. A prefab has to be created from the object by dragging it to the *Assets\PaintShop\Resources\CarComponents* folder. 
+
+16. Now a preview image must be created, which will be displayed on the monitor when a workpiece is selected. For this purpose, the *Assets\PaintShop\Scenes\ThumbnailGeneration* scene needs to be opened.
+![](Images/new_workpiece_10.PNG)
+
+17. In the *MeshFilter* component of the *Cube* object, the mesh of the new object must be selected. 
+![](Images/new_workpiece_11.PNG)
+
+18. The *Main Camera* should be placed so that the workpiece is centered in the preview. 
+
+19. The scene is now started once via the *Play* button and exited again. Now the preview image appears in the assets folder with the name *Cube_preview*.
+![](Images/new_workpiece_12.PNG)
+
+20. The object must be renamed according to the prefab created before (here *sphere_preview*) and moved to the prefabs folder (*Assets\PaintShop\Resources\CarComponents*). Also, the *Texture Type* must be changed to *Sprite (2D and UI)* in the image's settings. 
+
+21. In order for the workpiece to be displayed in the try mode without logging in (and thus without connecting to the server), an object must be added to the workpieces list in the *Assets\StreamingAssets\FallbackData.json* file. Here *ID* is the sequential index, *DISPLAY_NAME* is the name under which the workpiece is displayed on the monitor and *PREFAB_NAME* is the name of the prefab that contains the workpiece.
+
+```
+{
+  "id": ID,
+  "name": "DISPLAY_NAME",
+  "data": "CarComponents/PREFAB_NAME"
+}
+```
+
+22. An entry must be added to the database so that the workpiece can also be included in a learning task via the authoring tool. An example of this is provided in the [Initialization script](https://github.com/HandLeVR/server/blob/master/src/main/resources/db/migration/h2/V1.0__Init.sql) of the database of the server.

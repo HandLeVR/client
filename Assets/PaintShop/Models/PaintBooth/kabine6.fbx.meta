@@ -1,0 +1,315 @@
+fileFormatVersion: 2
+guid: 2e4c0ecbbe7f43748aa91ffa7849c2f4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Boden
+    100002: Boden_Durchsichtschutz
+    100004: Dach
+    100006: //RootNode
+    100008: Lampen Links
+    100010: Lampen Rechts
+    100012: Raum.hinten
+    100014: Raum.Links
+    100016: Raum.rechts
+    100018: Raum.Simpel_clone
+    100020: Raum.vorne
+    100022: Seitenfenster
+    100024: Tor
+    100026: "t\xFCr_hinten"
+    100028: "t\xFCr_vorne"
+    100030: "T\xFCrklinke.hinten"
+    100032: "T\xFCrklinke.vorne"
+    100034: Tor_simpel
+    400000: Boden
+    400002: Boden_Durchsichtschutz
+    400004: Dach
+    400006: //RootNode
+    400008: Lampen Links
+    400010: Lampen Rechts
+    400012: Raum.hinten
+    400014: Raum.Links
+    400016: Raum.rechts
+    400018: Raum.Simpel_clone
+    400020: Raum.vorne
+    400022: Seitenfenster
+    400024: Tor
+    400026: "t\xFCr_hinten"
+    400028: "t\xFCr_vorne"
+    400030: "T\xFCrklinke.hinten"
+    400032: "T\xFCrklinke.vorne"
+    400034: Tor_simpel
+    2100000: "Aluminium.T\xFCrklinke_vorne"
+    2100002: gloss_paint.raum.vorne
+    2100004: gloss_paint.raum_rechts
+    2100006: gloss_paint.raum_links
+    2100008: Aluminium.Dach_001
+    2100010: Aluminium.Dach
+    2100012: Filter
+    2100014: "gloss_paint.t\xFCr_hinten"
+    2100016: "Aluminium.T\xFCr_hinten"
+    2100018: "Glas.T\xFCr_Hinten"
+    2100020: Boden_grund
+    2100022: Boden
+    2100024: gloss_paint.raum_hinten
+    2100026: Aluminium.Lampe_rechts
+    2100028: Aluminium.Lampe_links.001
+    2100030: "Leuchtfl\xE4che.Lampe_links"
+    2100032: Aluminium.Seitenfenster
+    2100034: Glas.Seitenfenster
+    2100036: "gloss_paint.T\xFCr_vorne"
+    2100038: "Aluminium.T\xFCr_vorne"
+    2100040: "Glas.T\xFCr_vorne"
+    2100042: "Leuchtfl\xE4che.Lampe_rechts"
+    2100044: Aluminium.Tor_simpel
+    2300000: Boden
+    2300002: Boden_Durchsichtschutz
+    2300004: Dach
+    2300006: Lampen Links
+    2300008: Lampen Rechts
+    2300010: Raum.hinten
+    2300012: Raum.Links
+    2300014: Raum.rechts
+    2300016: Raum.Simpel_clone
+    2300018: Raum.vorne
+    2300020: Seitenfenster
+    2300022: Tor
+    2300024: "t\xFCr_hinten"
+    2300026: "t\xFCr_vorne"
+    2300028: "T\xFCrklinke.hinten"
+    2300030: "T\xFCrklinke.vorne"
+    2300032: Tor_simpel
+    3300000: Boden
+    3300002: Boden_Durchsichtschutz
+    3300004: Dach
+    3300006: Lampen Links
+    3300008: Lampen Rechts
+    3300010: Raum.hinten
+    3300012: Raum.Links
+    3300014: Raum.rechts
+    3300016: Raum.Simpel_clone
+    3300018: Raum.vorne
+    3300020: Seitenfenster
+    3300022: Tor
+    3300024: "t\xFCr_hinten"
+    3300026: "t\xFCr_vorne"
+    3300028: "T\xFCrklinke.hinten"
+    3300030: "T\xFCrklinke.vorne"
+    3300032: Tor_simpel
+    4300000: "T\xFCrklinke.hinten"
+    4300002: "T\xFCrklinke.vorne"
+    4300004: Raum.vorne
+    4300006: Raum.rechts
+    4300008: Raum.Links
+    4300010: Dach
+    4300012: "t\xFCr_hinten"
+    4300014: Boden_Durchsichtschutz
+    4300016: Tor
+    4300018: Boden
+    4300020: Raum.Simpel_clone
+    4300022: Lampen Rechts
+    4300024: Lampen Links
+    4300026: Seitenfenster
+    4300028: "t\xFCr_vorne"
+    4300030: Tor_simpel
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aluminium.Dach
+    second: {fileID: 2100000, guid: b3ead1350f346d84da9594f6230b68a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aluminium.Dach_001
+    second: {fileID: 2100000, guid: b3ead1350f346d84da9594f6230b68a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aluminium.Lampe_links.001
+    second: {fileID: 2100000, guid: b3ead1350f346d84da9594f6230b68a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aluminium.Lampe_rechts
+    second: {fileID: 2100000, guid: b3ead1350f346d84da9594f6230b68a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aluminium.Seitenfenster
+    second: {fileID: 2100000, guid: b3ead1350f346d84da9594f6230b68a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aluminium.Tor_simpel
+    second: {fileID: 2100000, guid: f81ce88141c2f0b43825ff7c20b871dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Aluminium.T\xFCr_hinten"
+    second: {fileID: 2100000, guid: b3ead1350f346d84da9594f6230b68a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Aluminium.T\xFCr_vorne"
+    second: {fileID: 2100000, guid: b3ead1350f346d84da9594f6230b68a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Aluminium.T\xFCrklinke_vorne"
+    second: {fileID: 2100000, guid: b3ead1350f346d84da9594f6230b68a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boden
+    second: {fileID: 2100000, guid: 7da99b89cdf10cb438f191172f241748, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boden_grund
+    second: {fileID: 2100000, guid: 06bbad42adaf8b740a19bc4782aa322a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Filter
+    second: {fileID: 2100000, guid: 1c8bfc9e5edb3404d961937fa6d2f5ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glas.Seitenfenster
+    second: {fileID: 2100000, guid: cd8404d72dddbf34b97b93ff50b99f91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Glas.T\xFCr_Hinten"
+    second: {fileID: 2100000, guid: cd8404d72dddbf34b97b93ff50b99f91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Glas.T\xFCr_vorne"
+    second: {fileID: 2100000, guid: cd8404d72dddbf34b97b93ff50b99f91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Leuchtfl\xE4che.Lampe_links"
+    second: {fileID: 2100000, guid: 6cb24d96b88421b4d9b4a9f8209299a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Leuchtfl\xE4che.Lampe_rechts"
+    second: {fileID: 2100000, guid: 6cb24d96b88421b4d9b4a9f8209299a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "gloss_paint.T\xFCr_vorne"
+    second: {fileID: 2100000, guid: c84cede8c84d2654c85d7ce8c93033c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gloss_paint.raum.vorne
+    second: {fileID: 2100000, guid: 30be7a789ffc5ab46a4422090f7716fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gloss_paint.raum_hinten
+    second: {fileID: 2100000, guid: cf71922c72bb33542a556b973b629455, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gloss_paint.raum_links
+    second: {fileID: 2100000, guid: 7e673bd0ecda1364ea993355c4c93fed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gloss_paint.raum_rechts
+    second: {fileID: 2100000, guid: 181a5904cd005d64fb925319dbe1dc00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "gloss_paint.t\xFCr_hinten"
+    second: {fileID: 2100000, guid: 515899223c1eb7648b50949e94cb89b4, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

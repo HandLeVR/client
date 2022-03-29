@@ -1,0 +1,136 @@
+﻿#pragma kernel SimulatePaintRun
+#pragma kernel SimulatePaintReduction
+#pragma kernel Smooth
+#pragma kernel HeightmapToGreyscale
+
+Texture2D<float4> normals;
+Texture2D<float4> tangents;
+Texture2D<float4> input;
+Texture2D<float4> lastResult;
+RWTexture2D<float4> result;
+uint texSize;
+// determines the the paint thickness from where the paint starts to run
+float minFlowThickness;
+// determines how fast the paint flows (max flow speed) - the lower the value the faster the paint flows
+// is a value between 0 and 1
+float viscosity;
+
+static const float PI = 3.1415926535897932384626433832795; 
+// we need a scale factor of at least 4 because otherwise the flow direction cannot be determined precise enough 
+// (only the 8 neighbors of a pixel would be reachable -> only 8 directions)
+static const float scaleFactor = 4;
+// determines how much the smoothing effect should be dampened
+static const float smoothingDamping = 1.25;
+// the range around minFlowThickness in percentage which is considered when converting from the heightmap to a greyscale heightmap
+// i.e.: heightmap value <= greyscaleMinHeight = white and heightmap value >= greyscaleMaxHeight = black. Everything between is linearly converted to greyscale values. 
+static const float grayscaleRangePercentage = 30;
+
+// in range in which the viscosity value is mapped to
+static const float2 generalViscosityRange = float2(0.001, 2);
+// adds extra viscosity to the flow method which is not considered when reducing the paint (indirectly controls how long the paint flows)
+static const float2 flowViscosityRange = float2(0, 0.05);
+
+
+/// Simulates paint that runs down the surface of an object on base of the uv map. To determine 
+/// how much paint has to be added to a pixel on the uv map the upper neighbor pixel is calculated. 
+/// Therefor the normal and tangent vectors of the corresponding texel is considered. The orientation 
+/// of the surface is also respected. That means the more vertical the surfaces is orientated the higher 
+/// the flow speed.
+///
+/// Attention: in unity the y axis of a uv coordinate system points downwards
+///
+/// The number of threads are set to 64 because it seems that this is the standard default.
+/// (https://www.reddit.com/r/GraphicsProgramming/comments/aeyfkh/for_compute_shaders_is_there_an_ideal_numthreads/)
+[numthreads(64,1,1)]
+void SimulatePaintRun (uint3 id : SV_DispatchThreadID)
+{   
+    // decode color to normal vector
+	float3 norm = normals[id.xy].xyz * 2 - 1;
+    // decode color to tangent vector
+	float3 tang = tangents[id.xy].xyz * 2 - 1;
+
+    // get the orthogonal vector to the world down direction vector and the normal vector (resulting vector lies on the surface)
+    float3 surfaceVec = cross(float3(0,-1,0), norm);
+    
+    // get the orthogonal vector of the surface vector and the normal vector (resulting vector lies on the surface and points up to the air)
+    float3 invFlowDir = cross(surfaceVec, norm);
+    
+    // calculate the angle between the tangent vector and the inverse flow direction 
+    float alpha = acos(dot(tang, invFlowDir) / (length(tang) * length(invFlowDir)));
+        
+    // the above formula always calculates the size of the smallest intersection angle but we need the full counterclockwise angle
+    // therefore we calculate the orthogonal vector to the normal and the tangent vector (in a 2D coordinate system where the tangent is the x axis the resulting vector is the y axis)
+    float3 uvY = cross(norm, tang);
+    // if the scalar of the y axis and the inverse flow direction is greater 0 (that means the inverse flow direction vector points towards +y) the target angle is the greater intersection angle
+    float dotV = dot(uvY, invFlowDir);
+    if (dotV > 0)
+        alpha = 2 * PI - alpha;
+    
+    // determine the orientation of the surface (a=1 => vertical and a=0 => horizontal)
+    float a = 1 - abs(dot(float3(0, 1, 0), norm) / length(norm));
+    
+    // get the uv coordinates (polar coordinates formula)
+    float2 invFlowDirUV = float2(a*cos(alpha),a*sin(alpha));
+    
+    // calculate the direction in which the upper neighbor lies
+    float2 neighborDirection = float2(invFlowDirUV.x, invFlowDirUV.y) * scaleFactor;
+    
+    // get the neighbor
+    float4 texZ = input[clamp(id.xy + round(neighborDirection), 0, texSize)];
+    
+    float currentThickness = texZ.b;
+    if (currentThickness > minFlowThickness) {
+        float amountUp = currentThickness - minFlowThickness;
+        // calculate flow speed (max flow speed is reached if maxFlowSpeedThickness is reached) which is dampened by the orientation of the surface 
+        float generalViscosity = lerp(generalViscosityRange.y, generalViscosityRange.x, viscosity);
+        float flowViscosity = lerp(flowViscosityRange.y, flowViscosityRange.x, viscosity);
+        float flowSpeed = lerp(0.1, generalViscosity + flowViscosity, saturate(a * 0.25));
+        // increase thickness of the current pixel considering the thickness of the neighbor pixel and the flow speed
+        float resultAmount = input[id.xy].b + amountUp * flowSpeed; 
+        result[id.xy] = float4(input[id.xy].rg, resultAmount, input[id.xy].a);
+    }
+}
+
+/// Reduces the thickness of the paint for a pixel by the same amount by which the paint flows to the next pixel.
+[numthreads(64,1,1)]
+void SimulatePaintReduction (uint3 id : SV_DispatchThreadID)
+{        
+	float3 norm = normals[id.xy].xyz * 2 - 1; 
+	// determine the orientation of the surface (a=1 => vertical and a=0 => horizontal)
+    float a = 1 - abs(dot(float3(0, 1, 0), norm) / length(norm));
+    float currentThickness = input[id.xy].b;
+ 
+    if (currentThickness > minFlowThickness) {
+        float amountUp = currentThickness - minFlowThickness;
+        // calculate flow speed (max flow speed is reached if maxFlowSpeedThickness is reached) which is dampened by the orientation of the surface 
+        float generalViscosity = lerp(generalViscosityRange.y, generalViscosityRange.x, viscosity);
+        float flowSpeed = lerp(0.1, generalViscosity, saturate(a * 0.25));
+        // increase thickness of the current pixel considering the current thickness and the flow speed
+        result[id.xy] = float4(input[id.xy].rg, max(lastResult[id.xy].b - amountUp * flowSpeed, minFlowThickness), input[id.xy].a);
+    }
+}
+
+/// Smooths the edges of a heightmap (otherwise the flowing color would creat aliasing).
+[numthreads(64,1,1)]
+void Smooth (uint3 id : SV_DispatchThreadID)
+{        
+    float u = input[id.xy + float2(0,1)].b;
+    float r = input[id.xy + float2(1,0)].b;
+    float d = input[id.xy + float2(0,-1)].b;
+    float l = input[id.xy + float2(-1,0)].b;
+    
+    float avrg = (u + r + d + l) / (4 * smoothingDamping);
+    
+    if (avrg > input[id.xy].b)
+        result[id.xy] = float4(input[id.xy].rg, avrg, input[id.xy].a);
+}
+
+
+[numthreads(64,1,1)]
+void HeightmapToGreyscale (uint3 id : SV_DispatchThreadID){
+    float greyscaleRangeHeightmap = minFlowThickness / 100 * grayscaleRangePercentage;
+    float greyscaleMinHeight = minFlowThickness - greyscaleRangeHeightmap;
+    float greyscaleMaxHeight = minFlowThickness + greyscaleRangeHeightmap;
+    float r =  saturate(max(0.5, 0.5 + ((input[id.xy].b - greyscaleMinHeight) / greyscaleMaxHeight)));
+    result[id.xy] = float4(r, r, r, 1);
+}

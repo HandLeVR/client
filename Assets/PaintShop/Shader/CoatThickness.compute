@@ -1,0 +1,28 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel SumUpThickness
+
+Texture2D<float4> heatmap;
+RWStructuredBuffer<float> result;
+uint size;
+uint threads;
+
+[numthreads(1,1,1)]
+void SumUpThickness (int id : SV_DispatchThreadID)
+{
+    const uint count = size / threads;
+    for (uint i = 0; i < count; i++)
+    {
+        for (uint j = 0; j < size; j++)
+        {
+            const float4 color = heatmap[int2(id * count + i,j)];
+            const float val = max(color.b, color.a);
+            if (val > 0.001)
+            {
+                // add coat amount
+                result[id * 2] = result[id * 2] + val;
+                // coat pixels with coat
+                result[id * 2 + 1] = result[id * 2 + 1] + 1;
+            }
+        }
+    }
+} 

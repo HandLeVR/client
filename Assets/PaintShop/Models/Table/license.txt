@@ -1,0 +1,11 @@
+Model Information:
+* title:	Table with metal legs
+* source:	https://sketchfab.com/3d-models/table-with-metal-legs-02b1f16a578245ecaeaccf138fd91d7e
+* author:	MrMirai (https://sketchfab.com/MrMirai)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Table with metal legs" (https://sketchfab.com/3d-models/table-with-metal-legs-02b1f16a578245ecaeaccf138fd91d7e) by MrMirai (https://sketchfab.com/MrMirai) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

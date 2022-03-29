@@ -1,0 +1,126 @@
+# Diese Konfigurationsdatei wird beim Start der Anwendung ausgelesen und dient der Anpassung verschiedener Parameter. 
+# Leere Zeilen und Zeilen, die mit einem '#' beginnen, werden ignoriert.
+# Damit ein Parameter von der Anwendung beachtet wird, muss somit das '#' am Anfang der Zeile entfernt werden.
+
+### Verbindung zum Server
+# Diese Einstellungen sind nötig um eine Verbindung zum Server herzustellen.
+# Bestimmt ob eine https genutzt werden soll. Wenn ja, wird "https://" vor die hier angegebenen URLs gesetzt, ansonsten "http://".
+server.https=false
+# Die URL des Servers.
+server.url=localhost:8080
+# Der Client Nutzername, der in der Konfigurationsdatei des Servers festgelegt wird.
+server.client-user-name=handlevrclient
+# Das Client Secret, das in der Konfigurationsdatei des Servers festgelegt wird.
+server.client-secret=XY7kmzoNzl100
+# Bestimmt die login URL und wird zu folgender URL verknüpft: {server.client-user-name}:{server.client-secret}@{server.oauth-login-url}
+server.oauth-login-url=localhost:8080/oauth/token?grant_type=password
+# Bestimmt die URL um das Anmeldetoken zu aktualisieren und wird zu folgender URL verknüpft: {server.client-user-name}:{server.client-secret}@{server.oauth-refresh-token-url}
+server.oauth-refresh-token-url=localhost:8080/oauth/token?grant_type=refresh_token
+
+### SSL
+# Diese Einstellungen ermöglichen es das SSL-Zertifikat des Servers zu prüfen. 
+# Aktiviert oder deaktiviert die Zertifikatsprüfung.
+ssl.enabled=false
+# Der Pfad zum Keystore, der genutzt wird, um das Zertifikat vom Server zu prüfen. Der Pfad kann relativ zum Ordner "Autorenwerkzeug_Data/StreamingAssets" oder absolut sein.
+ssl.keystore.path=SSL/handlevr.p12
+# Das Passwort für den Keystore.
+ssl.keystore.password=passwort
+
+### Erfolgskriterien
+# Mit den folgenden Einstellungen können die Erfolgskriterien in der Trainingsanwendung und im Reflexionswerkzeug angepasst werden.
+# In der Trainingsanwendung werden hierdurch die Bewertungen (maximal 3 Lackierpistolen) auf dem Auswertungsbildschirm beeinflusst. 
+# Im Reflexionswerkzeug werden hierdurch die farbigen Skalen bei den Erfolgskriterien angepasst. 
+# Es gibt immer 4 Parameter pro Erfolgskriterium, durch die in der Regel 3 Bereiche definiert werden.
+# Der 1. Bereich wird durch den optimalen Wert (optimal-value) und einem Toleranzbereich bestimmt, der durch den ersten Grenzwert (threshold1) berechnet wird.
+# Die Grenzwerte werden in Prozent angegeben, auf den optimalen Wert angewendet und zum vorherigen Bereich addiert. 
+#
+# Beispiel: Für optimal-value=200, threshold1=10, threshold2=20 und threshold3=5 gelten folgende Bereiche:
+# Bereich 1: zwischen 180 und 220 (10% von 200 = 20)
+# Bereich 2: zwischen 140 und 260 (20% von 200 = 40)
+# Bereich 3: zwischen 130 und 270 (5% von 200 = 5)
+# Die Bereiche werden also immer größer in Abhängigkeit von den angegeben Prozentwerden.
+# Im Auswertungsbildschirm in der Trainingsanwendung würden somit 3 Lackierpistolen vergeben werden, wenn sich der erreichte Wert im Bereich 1 befindet.
+# Liegt der erreichte Wert im Bereich 2, gibt es zwei Lackierpistolen usw.
+# Bei den Erfolgskriterien im Reflexionswerkzeug werden so entsprechend die farbigen Bereiche festgelegt.
+# Etwaige Ausnahmen von diesem Schema werden bei den jeweiligen Erfolgskriterien erklärt.
+#
+# Beeinflusst die Bereiche für das Erfolgskriterium "korrekter Abstand". Der optimale Wert (optimal-value) wird in % angegeben.
+#evaluation.correct-distance.optimal-value=100
+#evaluation.correct-distance.threshold1=10
+#evaluation.correct-distance.threshold2=10
+#evaluation.correct-distance.threshold3=10
+#
+# Beeinflusst die Bereiche für das Erfolgskriterium "korrekter Winkel". Der optimale Wert (optimal-value) wird in % angegeben.
+#evaluation.correct-angle.optimal-value=100
+#evaluation.correct-angle.threshold1=20
+#evaluation.correct-angle.threshold2=20
+#evaluation.correct-angle.threshold3=20
+#
+# Beeinflusst die Bereiche für das Erfolgskriterium "Farbverbrauch". Der optimale Wert (optimal-value) wird in ml angegeben.
+#evaluation.color-consumption.optimal-value=300
+#evaluation.color-consumption.threshold1=10
+#evaluation.color-consumption.threshold2=10
+#evaluation.color-consumption.threshold3=10
+#
+# Beeinflusst die Bereiche für das Erfolgskriterium "verschwendete Farbe". 
+# Der optimale Wert (optimal-value) wird in % angegeben und  auf den optimalen Wert des Erfolgskriteriums "Farbverbrauch" angewendet.
+# Bereich 1 liegt zwischen 0 und dem errechneten Wert plus dem ersten Grenzwert.
+# Die Berechnung der anderen Bereiche erfolgt wie oben beschrieben.
+# Beispiel: Für evaluation.color-consumption.optimal-value=300, evaluation.color-wastage.optimal-value=30, threshold1=0, threshold2=30 und threshold3=30 gelten folgende Bereiche:
+# Bereich 1: zwischen 0 und 90 (30% von 300 = 90 + 0% von 90 = 90)
+# Bereich 2: zwischen 0 und 117 (30% von 90 = 27)
+# Bereich 3: zwischen 0 und 134 (30% von 90 = 27)
+#evaluation.color-wastage.optimal-value=30
+#evaluation.color-wastage.threshold1=0
+#evaluation.color-wastage.threshold2=30
+#evaluation.color-wastage.threshold3=30
+#
+# Beeinflusst die Bereiche für das Erfolgskriterium "applizierte Farbe". 
+# Der optimale Wert (optimal-value) wird in % angegeben und  auf den optimalen Wert des Erfolgskriteriums "Farbverbrauch" angewendet.
+# Die Bereiche werden wie einleitend beschreiben berechnet.
+#evaluation.color-usage.optimal-value=70
+#evaluation.color-usage.threshold1=10
+#evaluation.color-usage.threshold2=10
+#evaluation.color-usage.threshold3=10
+#
+# Beeinflusst die Bereiche für das Erfolgskriterium "Abzughebel durchgedrückt".  Der optimale Wert (optimal-value) wird in % angegeben.
+#evaluation.fully-pressed-trigger.optimal-value=100
+#evaluation.fully-pressed-trigger.threshold1=5
+#evaluation.fully-pressed-trigger.threshold2=5
+#evaluation.fully-pressed-trigger.threshold3=5
+#
+# Beeinflusst die Bereiche für das Erfolgskriterium "durchschnittliche Geschwindigkeit".  Der optimale Wert (optimal-value) wird in m/s angegeben.
+#evaluation.average-speed.optimal-value=0,4
+#evaluation.average-speed.threshold1=20
+#evaluation.average-speed.threshold2=20
+#evaluation.average-speed.threshold3=20
+#
+# Beeinflusst die Bereiche für das Erfolgskriterium "durchschnittliche Schichtdicke". Der optimale Wert (optimal-value) wird in µm angegeben. 
+# Wird der optimale Wert nicht über diese Konfigurationsdatei bestimmt, wird er über die Eigenschaften "Minimale Zielschichtdicke nass" und "Maximale Zielschichtdicke nass" des verwendeten Lacks hergeleitet.
+#evaluation.average-coat-thickness.optimal-value=90
+#evaluation.average-coat-thickness.threshold1=20
+#evaluation.average-coat-thickness.threshold2=10
+#evaluation.average-coat-thickness.threshold3=10
+#
+# Beeinflusst den "Wert zum aktuellen Zeitpunkt" für das Erfolgskriterium "korrekter Abstand" im Reflexionswerkzeug. 
+# Der optimale Wert (optimal-value) wird in cm angegeben.
+# Wird der optimale Wert nicht über diese Konfigurationsdatei bestimmt, wird er über die Eigenschaften "Minimale Sprühdistanz" und "Maximale Sprühdistanz" des verwendeten Lacks hergeleitet.
+#evaluation.correct-distance-absolute.optimal-value=17,5
+#evaluation.correct-distance-absolute.threshold1=14,28
+#evaluation.correct-distance-absolute.threshold2=10
+#evaluation.correct-distance-absolute.threshold3=10
+#
+# Beeinflusst den "Wert zum aktuellen Zeitpunkt" für das Erfolgskriterium "korrekter Winkel" im Reflexionswerkzeug. 
+# Der optimale Wert (optimal-value) wird in ° angegeben.
+#evaluation.correct-angle.optimal-value=90
+#evaluation.correct-angle.threshold1=10
+#evaluation.correct-angle.threshold2=10
+#evaluation.correct-angle.threshold3=10
+
+### Anderes
+# Wenn dieser Wert auf "false" gesetzt ist, startet die Anwendung im Vollbildmodus. Ist der Wert auf "true" gesetzt, startet die Anwendung im Fenstermodus.
+#system.windowed-mode=true
+# Beeinflusst die maximale Dateigröße von Medien und Aufnahmen in MB. Kann maximal auf 2000 gesetzt werden.
+#system.max-file-size=1000
+# Beeinflusst die Sprache des Systems. Es ist möglich English (en_US) oder Deutsch (de_DE) auszuwählen. Bisher steht nur der Probiermodus und das Reflexionswerkzeug auf Englisch zur Verfügung.
+# system.language=de_DE

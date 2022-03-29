@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: 1d56ea5f2abb8d54191dde9b91da4153
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Abzug 810
+  - first:
+      1: 100002
+    second: "Griffhauptst\xFCck 1590"
+  - first:
+      1: 100004
+    second: //RootNode
+  - first:
+      1: 100006
+    second: Regler-h-o 152
+  - first:
+      1: 100008
+    second: Regler-h-u 160
+  - first:
+      1: 100010
+    second: Regler-l 88
+  - first:
+      1: 100012
+    second: Tank
+  - first:
+      4: 400000
+    second: Abzug 810
+  - first:
+      4: 400002
+    second: "Griffhauptst\xFCck 1590"
+  - first:
+      4: 400004
+    second: //RootNode
+  - first:
+      4: 400006
+    second: Regler-h-o 152
+  - first:
+      4: 400008
+    second: Regler-h-u 160
+  - first:
+      4: 400010
+    second: Regler-l 88
+  - first:
+      4: 400012
+    second: Tank
+  - first:
+      21: 2100000
+    second: gray.abzug.001
+  - first:
+      21: 2100002
+    second: gray.regler_h_u
+  - first:
+      21: 2100004
+    second: gray.abzug
+  - first:
+      21: 2100006
+    second: blue
+  - first:
+      21: 2100008
+    second: blau_kunststoff
+  - first:
+      21: 2100010
+    second: gray.regler_links
+  - first:
+      21: 2100012
+    second: gray.regler_h_o
+  - first:
+      21: 2100014
+    second: weis
+  - first:
+      21: 2100016
+    second: Rot
+  - first:
+      23: 2300000
+    second: Abzug 810
+  - first:
+      23: 2300002
+    second: "Griffhauptst\xFCck 1590"
+  - first:
+      23: 2300004
+    second: Regler-h-o 152
+  - first:
+      23: 2300006
+    second: Regler-h-u 160
+  - first:
+      23: 2300008
+    second: Regler-l 88
+  - first:
+      23: 2300010
+    second: Tank
+  - first:
+      33: 3300000
+    second: Abzug 810
+  - first:
+      33: 3300002
+    second: "Griffhauptst\xFCck 1590"
+  - first:
+      33: 3300004
+    second: Regler-h-o 152
+  - first:
+      33: 3300006
+    second: Regler-h-u 160
+  - first:
+      33: 3300008
+    second: Regler-l 88
+  - first:
+      33: 3300010
+    second: Tank
+  - first:
+      43: 4300000
+    second: Abzug 810
+  - first:
+      43: 4300002
+    second: Regler-h-u 160
+  - first:
+      43: 4300004
+    second: "Griffhauptst\xFCck 1590"
+  - first:
+      43: 4300006
+    second: Regler-l 88
+  - first:
+      43: 4300008
+    second: Regler-h-o 152
+  - first:
+      43: 4300010
+    second: Tank
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rot
+    second: {fileID: 2100000, guid: 849417fcd91099f4192a915d619e7892, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blau_kunststoff
+    second: {fileID: 2100000, guid: f0aa0c2ca8023f44caaba1308e5d70b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blue
+    second: {fileID: 2100000, guid: b40b8f0bee3e7ee4dbff9349def07cf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray.abzug
+    second: {fileID: 2100000, guid: 0392869202abb97489eda8d523f693a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray.abzug.001
+    second: {fileID: 2100000, guid: a2d14af1d375a53499c1fec2f0bac838, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray.regler_h_o
+    second: {fileID: 2100000, guid: aed462cf9d0ab2a4cadc5505dcdec804, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray.regler_h_u
+    second: {fileID: 2100000, guid: 35e4af2afc3d9454d8518627874eb39a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gray.regler_links
+    second: {fileID: 2100000, guid: 1903c003a002e0e4d9fcf41b644f7010, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: weis
+    second: {fileID: 2100000, guid: 24a263d2f0ee0524f8e178dbe5636a75, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

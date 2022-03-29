@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 35255ab8f7e5a604c8476d915398e923
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 04dbbea2571858d45a49d6587c5b24ce
+  - enabled: 1
+    path: Assets/PaintShop/Scenes/PaintShop.unity
+    guid: f7a181f3d4957f44e886929ecd00f64d
+  - enabled: 1
+    path: Assets/AuthoringTool/Scenes/AuthoringTool.unity
+    guid: 819d3268cdece634186486a0c9eb975f
+  - enabled: 1
+    path: Assets/PaintShop/Scenes/AdditiveScenes/PaintShopDynamicScenario.unity
+    guid: ee3629833f1445b419bcd19e00948b06
+  - enabled: 1
+    path: Assets/PaintShop/Scenes/AdditiveScenes/ReflectionTool.unity
+    guid: 96cde851500dec94faaec219c17f702e
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7d8d039322fc59049bfa619de094dc77,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d656f527489d4c04b953e42e785f6c29,
+      type: 2}

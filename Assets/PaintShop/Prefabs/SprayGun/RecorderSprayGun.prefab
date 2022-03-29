@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1404758494269420692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1515518785983735986, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442739531434498265, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5216533780188728850, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501123887710, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_Name
+      value: RecorderSprayGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.005100012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.031700015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0934
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5783026
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.43604794
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5443889
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.4231656
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 177.501
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 91.548996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145130501124378238, guid: 63f8540f516eb1c4086903087cdcf08b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 105.17899
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1727646608001294928, guid: 63f8540f516eb1c4086903087cdcf08b, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 63f8540f516eb1c4086903087cdcf08b, type: 3}
+--- !u!4 &520890031393758519 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1460334859042974115, guid: 63f8540f516eb1c4086903087cdcf08b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1404758494269420692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1569311964892268212 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 484669684181414432, guid: 63f8540f516eb1c4086903087cdcf08b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1404758494269420692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5536210131890246809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6893363549022232589, guid: 63f8540f516eb1c4086903087cdcf08b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1404758494269420692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7095391944306878154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8145130501123887710, guid: 63f8540f516eb1c4086903087cdcf08b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1404758494269420692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5379582418978195585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095391944306878154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf8e51a7700cf34c8a633b7b5414a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleCookie: 1
+  paintSpotDrawer: {fileID: 0}
+  pinSpotOrigin: {fileID: 1569311964892268212}
+  startTriggerValue: 0
+  airTriggerValue: 0.2
+  fullTriggerValue: 1
+  maxTriggerRotation: 20
+  TriggerRotationPoint: {fileID: 520890031393758519}
+  sprayGunObjects: {fileID: 5536210131890246809}
+  tankTextureSpray: {fileID: 2800000, guid: 65d8f360e8e0a5f44b1bd14940ade0fa, type: 3}
+  tankTextureTeleport: {fileID: 2800000, guid: 493c62563ea5ee6428c2765bca19d693, type: 3}
+  spray: {fileID: 0}
+  sprayCone: {fileID: 0}
+  audioSource: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  currentMode: 0
+  currentDraggable: {fileID: 0}
+  sprayingValue: 0
+  triggerValue: 0
+  wideStreamRegulationValue: 0
+  startPos: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 0, w: 0}
+  isAdjustingPaintStand: 0

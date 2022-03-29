@@ -1,0 +1,3 @@
+#"needed to be able to use the ZipFile class"
+-r:System.IO.Compression.dll
+-r:System.IO.Compression.FileSystem.dll
